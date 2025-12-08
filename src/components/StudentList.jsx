@@ -1,15 +1,15 @@
 import './StudentList.css';
 import Student from './Student';
 
-const StudentList = () => {
+const StudentList = (props) => {
   const headingClass = 'student-list__heading';
   const listClass = 'student-list';
   
-  const studentComponents = [
-    <li><Student name='Riley' email='riley@email.com'></Student></li>,
-    <li><Student name='Maille' email='maille@email.com'></Student></li>,
-    <li><Student name='Bixby' email='bixby@dog.com'></Student></li>
-  ]
+  const studentComponents = props.students.map(student => {
+        return (
+            <li><Student name={student.nameData} email={student.emailData}></Student></li>
+        );
+    });
 
   return (
     <section>
