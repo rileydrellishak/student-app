@@ -11,4 +11,4 @@ const ClassInfo = (props) => {
   );
 };
 
-export default ClassInfo
+export default ClassInfo;

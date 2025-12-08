@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Student = (props) => {
   return (
     <ul>
@@ -5,6 +7,11 @@ const Student = (props) => {
       <li>Email: {props.email}</li>
     </ul>
   );
+};
+
+Student.PropTypes = {
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired
 };
 
 export default Student;
