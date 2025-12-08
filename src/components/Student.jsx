@@ -1,8 +1,8 @@
-const Student = () => {
+const Student = (props) => {
   return (
     <ul>
-      <li>Nickname: Riley</li>
-      <li>Email: riley@email.com</li>
+      <li>Nickname: {props.name}</li>
+      <li>Email: {props.email}</li>
     </ul>
   );
 };
