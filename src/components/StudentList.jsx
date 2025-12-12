@@ -1,5 +1,6 @@
 import './StudentList.css';
 import Student from './Student';
+import PropTypes from 'prop-types';
 
 const StudentList = (props) => {
   const headingClass = 'student-list__heading';
@@ -7,7 +8,10 @@ const StudentList = (props) => {
   
   const studentComponents = props.students.map((student, i) => {
         return (
-            <li key={i}><Student name={student.nameData} email={student.emailData}></Student></li>
+            <li key={i}>
+              <Student name={student.nameData} email={student.emailData}>
+              </Student>
+            </li>
         );
     });
 
@@ -20,5 +24,14 @@ const StudentList = (props) => {
     </section>
   );
 };
+
+StudentList.propTypes = {
+  students: PropTypes.arrayOf(
+    PropTypes.shape({
+      nameData: PropTypes.string.isRequired,
+      emailData: PropTypes.string.isRequired
+    })
+  )
+}
 
 export default StudentList;
