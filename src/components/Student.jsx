@@ -12,7 +12,7 @@ const Student = (props) => {
   const nameColor = isPresent ? 'present': 'absent';
 
   return (
-    <div>
+    <div id={props.id}>
       <ul>
         <li className={nameColor}>Nickname: {props.name}</li>
         <li>Email: {props.email}</li>
@@ -22,9 +22,9 @@ const Student = (props) => {
   );
 };
 
-Student.PropTypes = {
+Student.propTypes = PropTypes.shape({
   name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired
-};
+  email: PropTypes.string.isRequired,
+}).isRequired;
 
 export default Student;

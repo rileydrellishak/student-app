@@ -5,9 +5,9 @@ const StudentList = (props) => {
   const headingClass = 'student-list__heading';
   const listClass = 'student-list';
   
-  const studentComponents = props.students.map(student => {
+  const studentComponents = props.students.map((student, i) => {
         return (
-            <li><Student name={student.nameData} email={student.emailData}></Student></li>
+            <li key={i}><Student name={student.nameData} email={student.emailData}></Student></li>
         );
     });
 
